@@ -184,6 +184,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataClass\Arrondissement.cs" />
+    <Compile Include="Models\DataClass\Centre.cs" />
+    <Compile Include="Models\DataClass\Commune.cs" />
+    <Compile Include="Models\DataClass\Contact.cs" />
+    <Compile Include="Models\DataClass\Declaration.cs" />
+    <Compile Include="Models\DataClass\Departement.cs" />
+    <Compile Include="Models\DataClass\Domicile.cs" />
+    <Compile Include="Models\DataClass\EtatCivil.cs" />
+    <Compile Include="Models\DataClass\Langue.cs" />
+    <Compile Include="Models\DataClass\Mere.cs" />
+    <Compile Include="Models\DataClass\Naissance.cs" />
+    <Compile Include="Models\DataClass\Pays.cs" />
+    <Compile Include="Models\DataClass\Pere.cs" />
+    <Compile Include="Models\DataClass\Personne.cs" />
+    <Compile Include="Models\DataClass\Region.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,7 +215,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\api\" />
-    <Folder Include="Models\" />
     <Folder Include="Services\Administration\" />
     <Folder Include="Services\Archivage\" />
     <Folder Include="Services\Declaration\" />
