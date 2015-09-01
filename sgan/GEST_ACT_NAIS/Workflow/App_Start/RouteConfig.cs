@@ -16,7 +16,7 @@ namespace P7GestAct
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Project", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Accuiel", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

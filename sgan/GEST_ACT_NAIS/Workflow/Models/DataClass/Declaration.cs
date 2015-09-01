@@ -21,8 +21,9 @@ namespace P7GestAct.Models.DataClass
         public String D_Lieu { get; set; }
 
         public String D_Name { get; set; }
-
+        //foreign key
         public Int64 PersonneID { get; set; }
+        //navigation property
         public virtual Personne Personne { get; set; }
 
         public Int64 CentreID { get; set; }

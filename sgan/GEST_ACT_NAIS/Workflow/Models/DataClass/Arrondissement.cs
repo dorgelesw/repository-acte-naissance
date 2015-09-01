@@ -13,7 +13,7 @@ namespace P7GestAct.Models.DataClass
         [Required]
         public String Arr_Name { get; set; }
 
-        public Int64 DapartementID { get; set; }
+        public Int64 DepartementID { get; set; }
         public virtual Departement Departement { get; set; }
         public virtual ICollection<Commune> Communes { get; set; }
     }

@@ -60,7 +60,7 @@ namespace P7GestAct.Models.Repositories
 
         //Mere
         IEnumerable<Mere> Meres { get; }
-        int addCommune(Mere mere);
+        int addMere(Mere mere);
         int updateMere(Mere mere);
         Mere deleteMere(Int64 id);
         Mere findMere(Int64 id);

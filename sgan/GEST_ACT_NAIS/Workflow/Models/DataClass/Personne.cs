@@ -17,10 +17,10 @@ namespace P7GestAct.Models.DataClass
         public String P_Name { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
+        //[DataType(DataType.Date)]
         [DisplayName("Date de naissance")]
-        [DisplayFormat(DataFormatString="{dd/MM/yy}")]
-        public DateTime P_Date_Naissance { get; set; }
+        //[DisplayFormat(DataFormatString="{dd/MM/yy}")]
+        public string P_Date_Naissance { get; set; }
 
         [Required]
         [DisplayName("Lieu de naissance")]
@@ -28,11 +28,12 @@ namespace P7GestAct.Models.DataClass
 
         [Required]
         [DisplayName("Sexe")]
-        public Char P_Sexe { get; set; }
-
+        public String P_Sexe { get; set; }
+        /*
         public virtual ICollection<Domicile> Domiciles { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ICollection<EtatCivil> Etat_Civils { get; set; }
         public virtual ICollection<Declaration> Declarations { get; set; }
+         * */
     }
 }

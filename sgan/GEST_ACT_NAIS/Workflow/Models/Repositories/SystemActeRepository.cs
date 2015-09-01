@@ -312,6 +312,7 @@ namespace P7GestAct.Models.Repositories
         {
             get { return context.Peres; }
         }
+        
         public int addPere(Pere pere)
         {
             context.Peres.Add(pere);
@@ -347,7 +348,7 @@ namespace P7GestAct.Models.Repositories
         {
             get { return context.Meres; }
         }
-        public int addCommune(Mere mere)
+        public int addMere(Mere mere)
         {
             context.Meres.Add(mere);
             return context.SaveChanges();
