@@ -955,6 +955,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\api\AccuielController.cs" />
+    <Compile Include="Controllers\api\DeclarationController.cs" />
+    <Compile Include="Controllers\api\MereController.cs" />
+    <Compile Include="Controllers\api\NaissanceController.cs" />
+    <Compile Include="Controllers\api\PereController.cs" />
+    <Compile Include="Controllers\api\PersonnesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1000,7 +1006,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Thème1\" />
-    <Folder Include="Controllers\api\" />
     <Folder Include="Services\Administration\" />
     <Folder Include="Services\Archivage\" />
     <Folder Include="Services\Declaration\" />
