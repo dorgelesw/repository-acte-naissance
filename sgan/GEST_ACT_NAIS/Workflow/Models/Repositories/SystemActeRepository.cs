@@ -87,7 +87,7 @@ namespace P7GestAct.Models.Repositories
 
         public int updateDomicile(Domicile domicile)
         {
-            Domicile oldD = context.Domiciles.Find(domicile.DocimicleID);
+            Domicile oldD = context.Domiciles.Find(domicile.DomicileID);
             if (oldD != null)
             {
                 oldD.Pays = domicile.Pays;

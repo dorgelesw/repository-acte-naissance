@@ -13,7 +13,7 @@ namespace P7GestAct.Models.DataClass
         [Required]
         public String Commune_Name { get; set; }
 
-        public Int64 ArrID { get; set; }
+        public Int64 ArrondissementID { get; set; }
         public Arrondissement Arrondissement { get; set; }
     }
 }

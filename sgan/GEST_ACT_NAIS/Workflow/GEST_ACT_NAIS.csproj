@@ -1970,6 +1970,7 @@
     <Compile Include="Models\DataClass\Region.cs" />
     <Compile Include="Models\Repositories\IRepository.cs" />
     <Compile Include="Models\Repositories\SystemActeDbContext.cs" />
+    <Compile Include="Models\Repositories\SystemActeDbContextInitializer.cs" />
     <Compile Include="Models\Repositories\SystemActeRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

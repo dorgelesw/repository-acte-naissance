@@ -17,7 +17,7 @@ namespace P7GestAct.Models.DataClass
 
 
         public Int64 RegionID { get; set; }
-        public virtual Departement Region { get; set; }
+        public virtual Region Region { get; set; }
         public virtual ICollection<Arrondissement> Arrondissements { get; set; }
     }
 }
