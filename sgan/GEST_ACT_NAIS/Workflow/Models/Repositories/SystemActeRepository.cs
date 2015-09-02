@@ -15,10 +15,14 @@ namespace P7GestAct.Models.Repositories
             get { return context.Personnes; }
         }
 
-        public int addPersonne(Personne p)
+        public Int64 addPersonne(Personne p)
         {
-            context.Personnes.Add(p);
-            return context.SaveChanges();
+            p.ArrondissementID = 1;
+
+            p = context.Personnes.Add(p);
+            context.SaveChanges();
+
+            return p.PersonneID;
         }
 
         public int updatePersonne(Personne p)

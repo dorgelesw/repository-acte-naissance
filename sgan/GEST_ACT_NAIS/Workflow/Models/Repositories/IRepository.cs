@@ -81,7 +81,7 @@ namespace P7GestAct.Models.Repositories
 
         //Personne
         IEnumerable<Personne> Personnes { get; }
-        int addPersonne(Personne personne);
+        Int64 addPersonne(Personne personne);
         int updatePersonne(Personne personne);
         Personne deletePersonne(Int64 id);
         Personne findPersonne(Int64 id);
