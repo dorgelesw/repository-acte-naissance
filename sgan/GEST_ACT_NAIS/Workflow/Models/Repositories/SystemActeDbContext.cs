@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -12,7 +13,13 @@ namespace P7GestAct.Models.Repositories
         public SystemActeDbContext()
             : base("systemActeDb")
         {
-           
+            Database.SetInitializer<SystemActeDbContext>(new SystemActeDbContextInitializer());
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
         }
 
         public DbSet<Arrondissement> Arrondissements { get; set; }
