@@ -25,7 +25,7 @@ namespace P7GestAct.Controllers.api
             Personne result = repository.Personnes.Where(p => p.PersonneID==id).FirstOrDefault();
             return result == null ? (IHttpActionResult)BadRequest("aucun declarant") : Ok(result);
         }
-        public Int64 PostPersonne(Personne personne)
+        public int PostPersonne(Personne personne)
         {
            
             if (ModelState.IsValid)

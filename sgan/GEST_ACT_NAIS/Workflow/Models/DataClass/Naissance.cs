@@ -9,7 +9,7 @@ namespace P7GestAct.Models.DataClass
 {
     public class Naissance
     {
-        public Int64 NaissanceID { get; set; }
+        public int NaissanceID { get; set; }
 
         [Required]
         [DisplayName("Nom de l'enfant")]
@@ -37,13 +37,13 @@ namespace P7GestAct.Models.DataClass
         [DisplayName("Sexe")]
         public Char N_Sexe { get; set; }
 
-        public Int64 DeclarationID { get; set; }
+        public int DeclarationID { get; set; }
         public virtual Declaration Declaration { get; set; }
 
-        public Int64 PereID { get; set; }
+        public int PereID { get; set; }
         public virtual Pere Pere { get; set;}
 
-        public Int64 MereID { get; set; }
+        public int MereID { get; set; }
         public virtual Mere Mere { get; set; }
     }
 }

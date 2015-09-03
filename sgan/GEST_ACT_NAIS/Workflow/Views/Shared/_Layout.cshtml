@@ -339,17 +339,53 @@
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-        
-        $("#last").click(function () {
-            /*alert($("#decl_name").val());
-            alert($("#decl_date").val());
+        function savePere(idDeclaration) {
+            $.ajax("http://localhost:2201/api/Mere", {
+                type: "POST",
+                async: false,
+                data: {
+                    id: 0,
+                    M_Nom_Famille_Naissance: $("#merenom").val(),
+                    //D_Date_Heure: $("#D_Heure").val(),
 
-            alert($("#decl_domicile").val());
-            alert($("#decl_sexe").val());
-            alert("ok");
-            */
-           
-            
+
+                },
+                success: function (resultat, statut) {
+                    console.log(resultat);
+                    alert("enregistrement effectuee");
+                },
+                error: function (resultat, statut, erreur) {
+                    alert("enregistrement echec");
+                },
+                complete: function () {
+
+                }
+            });
+        }
+        function savePere(idDeclaration) {
+        $.ajax("http://localhost:2201/api/Pere", {
+            type: "POST",
+            async: false,
+            data: {
+                id: 0,
+                P_Nom_Famille: $("#perenom").val(),
+                //D_Date_Heure: $("#D_Heure").val(),
+                
+
+            },
+            success: function (resultat, statut) {
+                console.log(resultat);
+                alert("enregistrement effectuee");
+            },
+            error: function (resultat, statut, erreur) {
+                alert("enregistrement echec");
+            },
+            complete: function () {
+
+            }
+        });
+    }
+        $("#last").click(function () { 
             $.ajax("http://localhost:2201/api/Personnes", {
                 type: "POST",
                 async: true,
@@ -363,12 +399,10 @@
 
                 },
                 success: function (resultat, statut) {
-                    //savePere(resultat);
-                    alert(resultat);
-                    console.log(resultat);
+                    savePere(resultat);
                 },
                 error: function (resultat, statut, erreur) {
-                    alert("enregistrement echec");
+                    alert("0");
                 },
                 complete: function () {
                     alert("complete");

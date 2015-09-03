@@ -15,7 +15,7 @@ namespace P7GestAct.Models.Repositories
             get { return context.Personnes; }
         }
 
-        public Int64 addPersonne(Personne p)
+        public int addPersonne(Personne p)
         {
             p.ArrondissementID = 1;
 
@@ -40,7 +40,7 @@ namespace P7GestAct.Models.Repositories
             return -1;
         }
 
-        public Personne deletePersonne(Int64 id) 
+        public Personne deletePersonne(int id) 
         {
             Personne p=null;
 
@@ -71,7 +71,7 @@ namespace P7GestAct.Models.Repositories
             return p;
         }
 
-        public Personne findPersonne(Int64 id)
+        public Personne findPersonne(int id)
         {
             Personne p = context.Personnes.Find(id);
             return p;
@@ -102,7 +102,7 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Domicile deleteDomicile(Int64 id)
+        public Domicile deleteDomicile(int id)
         {
             Domicile d = context.Domiciles.Find(id);
             if (d != null)
@@ -112,7 +112,7 @@ namespace P7GestAct.Models.Repositories
             }
             return d;
         }
-        public Domicile findDomicile(Int64 id)
+        public Domicile findDomicile(int id)
         {
             Domicile d = context.Domiciles.Find(id);
             if (d != null)
@@ -150,7 +150,7 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public EtatCivil deleteEtatCivil(Int64 id)
+        public EtatCivil deleteEtatCivil(int id)
         {
             EtatCivil c = context.EtatCivils.Find(id);
             if (c != null)
@@ -160,7 +160,7 @@ namespace P7GestAct.Models.Repositories
             }
             return c;
         }
-        public EtatCivil findEtatCivil(Int64 id)
+        public EtatCivil findEtatCivil(int id)
         {
             EtatCivil c = context.EtatCivils.Find(id);
             if (c != null)
@@ -193,7 +193,7 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Contact deleteContact(Int64 id)
+        public Contact deleteContact(int id)
         {
             Contact c = context.Contacts.Find(id);
             if (c != null)
@@ -203,7 +203,7 @@ namespace P7GestAct.Models.Repositories
             }
             return c;
         }
-        public Contact findContact(Int64 id)
+        public Contact findContact(int id)
         {
             Contact c = context.Contacts.Find(id);
             if (c != null)
@@ -236,7 +236,7 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Declaration deleteDeclaration(Int64 id)
+        public Declaration deleteDeclaration(int id)
         {
             Declaration declaration = null;
 
@@ -252,7 +252,7 @@ namespace P7GestAct.Models.Repositories
             }
             return declaration;
         }
-        public Declaration findDeclaration(Int64 id)
+        public Declaration findDeclaration(int id)
         {
             Declaration d = context.Declarations.Find(id);
             if (d != null)
@@ -289,7 +289,7 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Naissance deleteNaissance(Int64 id)
+        public Naissance deleteNaissance(int id)
         {
             Naissance naissance = context.Naissances.Find(id);
             if (naissance != null)
@@ -299,7 +299,7 @@ namespace P7GestAct.Models.Repositories
             }
             return naissance;
         }
-        public Naissance findNaissance(Int64 id)
+        public Naissance findNaissance(int id)
         {
             Naissance n = context.Naissances.Find(id);
             if (n != null)
@@ -337,11 +337,11 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Pere deletePere(Int64 id)
+        public Pere deletePere(int id)
         {
             return null;
         }
-        public Pere findPere(Int64 id)
+        public Pere findPere(int id)
         {
             Pere p = context.Peres.Find(id);
             return p;
@@ -372,11 +372,11 @@ namespace P7GestAct.Models.Repositories
             }
             return -1;
         }
-        public Mere deleteMere(Int64 id)
+        public Mere deleteMere(int id)
         {
             return null;
         }
-        public Mere findMere(Int64 id)
+        public Mere findMere(int id)
         {
             Mere m = context.Meres.Find(id);
             return m;

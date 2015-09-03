@@ -8,12 +8,12 @@ namespace P7GestAct.Models.DataClass
 {
     public class Commune
     {
-        public Int64 CommuneID { get; set; }
+        public int CommuneID { get; set; }
 
         [Required]
         public String Commune_Name { get; set; }
 
-        public Int64 ArrondissementID { get; set; }
+        public int ArrondissementID { get; set; }
         public Arrondissement Arrondissement { get; set; }
     }
 }

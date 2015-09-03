@@ -15,7 +15,15 @@ namespace P7GestAct.Controllers.api
         private IRepository repository = new SystemActeRepository();
         public int PostPere(Pere peres)
         {
-            return repository.addPere(peres);
+            if (ModelState.IsValid)
+            {
+                return repository.addPere(peres);
+            }
+            else
+            {
+                return 1;
+
+            }
         }
     }
 }

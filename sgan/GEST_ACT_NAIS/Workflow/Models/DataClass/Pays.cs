@@ -8,7 +8,7 @@ namespace P7GestAct.Models.DataClass
 {
     public class Pays
     {
-        public Int64 PaysID { get; set; }
+        public int PaysID { get; set; }
 
         [Required]
         public String Pays_Name { get; set; }

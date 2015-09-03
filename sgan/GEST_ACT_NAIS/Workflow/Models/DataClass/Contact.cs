@@ -8,7 +8,7 @@ namespace P7GestAct.Models.DataClass
 {
     public class Contact
     {
-        public Int64 ContactID { get; set; }
+        public int ContactID { get; set; }
 
         [Required(ErrorMessage = "Please enter the Telephone number")]
         public String Tel { get; set; }
@@ -18,7 +18,7 @@ namespace P7GestAct.Models.DataClass
 
         public String BP { get; set; }
 
-        public Int64 PersonneID { get; set; }
+        public int PersonneID { get; set; }
         public virtual Personne Personne { get; set; }
     }
 }

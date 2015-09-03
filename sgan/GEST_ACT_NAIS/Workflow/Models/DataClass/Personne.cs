@@ -10,7 +10,7 @@ namespace P7GestAct.Models.DataClass
     public class Personne
     {
 
-        public Int64 PersonneID { get; set; }
+        public int PersonneID { get; set; }
 
         [Required(ErrorMessage = "Please enter the complete name")]
         [DisplayName("Nom complet")]
@@ -29,7 +29,7 @@ namespace P7GestAct.Models.DataClass
         [Required]
         [DisplayName("Sexe")]
         public String P_Sexe { get; set; }
-        public Int64 ArrondissementID { get; set; }
+        public int ArrondissementID { get; set; }
         public virtual Arrondissement Arrondissement { get; set; }
         public virtual ICollection<Domicile> Domiciles { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }

@@ -9,7 +9,7 @@ namespace P7GestAct.Models.DataClass
 {
     public class Declaration
     {
-        public Int64 DeclarationID { get; set; }
+        public int DeclarationID { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]
@@ -22,11 +22,11 @@ namespace P7GestAct.Models.DataClass
 
         public String D_Name { get; set; }
         //foreign key
-        public Int64 PersonneID { get; set; }
+        public int PersonneID { get; set; }
         //navigation property
         public virtual Personne Personne { get; set; }
 
-        public Int64 CentreID { get; set; }
+        public int CentreID { get; set; }
         public virtual Centre Centre { get; set; }
 
         public virtual ICollection<Naissance> Naissances { get; set; }

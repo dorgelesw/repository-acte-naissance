@@ -34,56 +34,56 @@ namespace P7GestAct.Models.Repositories
         IEnumerable<Contact> Contacts { get; }
         int addContact(Contact contact);
         int updateContact(Contact contact);
-        Contact deleteContact(Int64 id);
-        Contact findContact(Int64 id);
+        Contact deleteContact(int id);
+        Contact findContact(int id);
 
         //Declaration
         IEnumerable<Declaration> Declarations { get; }
         int addDeclaration(Declaration declaration);
         int updateDeclaration(Declaration declaration);
-        Declaration deleteDeclaration(Int64 id);
-        Declaration findDeclaration(Int64 id);
+        Declaration deleteDeclaration(int id);
+        Declaration findDeclaration(int id);
 
         //Domicile
         IEnumerable<Domicile> Domiciles { get; }
         int addDomicile(Domicile domicile);
         int updateDomicile(Domicile domicile);
-        Domicile deleteDomicile(Int64 id);
-        Domicile findDomicile(Int64 id);
+        Domicile deleteDomicile(int id);
+        Domicile findDomicile(int id);
 
         //Etat Civil
         IEnumerable<EtatCivil> EtatCivils { get; }
         int addEtatCivil(EtatCivil etatCivil);
         int updateEtatCivil(EtatCivil etatCivil);
-        EtatCivil deleteEtatCivil(Int64 id);
-        EtatCivil findEtatCivil(Int64 id);
+        EtatCivil deleteEtatCivil(int id);
+        EtatCivil findEtatCivil(int id);
 
         //Mere
         IEnumerable<Mere> Meres { get; }
         int addMere(Mere mere);
         int updateMere(Mere mere);
-        Mere deleteMere(Int64 id);
-        Mere findMere(Int64 id);
+        Mere deleteMere(int id);
+        Mere findMere(int id);
 
         //Naissance
         IEnumerable<Naissance> Naissances { get; }
         int addNaissance(Naissance naissance);
         int updateNaissance(Naissance naissance);
-        Naissance deleteNaissance(Int64 id);
-        Naissance findNaissance(Int64 id);
+        Naissance deleteNaissance(int id);
+        Naissance findNaissance(int id);
 
         //Pere
         IEnumerable<Pere> Peres { get; }
         int addPere(Pere pere);
         int updatePere(Pere pere);
-        Pere deletePere(Int64 id);
-        Pere findPere(Int64 id);
+        Pere deletePere(int id);
+        Pere findPere(int id);
 
         //Personne
         IEnumerable<Personne> Personnes { get; }
-        Int64 addPersonne(Personne personne);
+        int addPersonne(Personne personne);
         int updatePersonne(Personne personne);
-        Personne deletePersonne(Int64 id);
-        Personne findPersonne(Int64 id);
+        Personne deletePersonne(int id);
+        Personne findPersonne(int id);
     }
 }

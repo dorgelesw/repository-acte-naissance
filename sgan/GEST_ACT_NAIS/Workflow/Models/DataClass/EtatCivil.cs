@@ -9,7 +9,7 @@ namespace P7GestAct.Models.DataClass
 {
     public class EtatCivil
     {
-        public Int64 EtatCivilID { get; set; }
+        public int EtatCivilID { get; set; }
 
         [Required]
         public String Nationalite { get; set; }
@@ -29,7 +29,7 @@ namespace P7GestAct.Models.DataClass
         [DisplayName("upload parental certificate")]
         public byte[] ActeReconnaissanceParentale { get; set; }
 
-        public Int64 PersonneID { get; set; }
+        public int PersonneID { get; set; }
         public virtual Personne Personne { get; set; }
     }
 }

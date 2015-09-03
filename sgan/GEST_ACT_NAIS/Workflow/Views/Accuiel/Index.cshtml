@@ -242,29 +242,5 @@
         <button type="button" id="last" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon-floppy-disk"></span>save</button>
     </div><!-- /.box-footer-->
 </div>
-<script type="text/javascript">
-
-    function saveMere(idDeclaration) {
-        $.ajax("http://localhost:2201/api/Pere", {
-            type: "POST",
-            async: false,
-            data: {
-                id: 0,
-                D_Name: $("#D_Name").val(),
-                D_Date_Heure: $("#D_Heure").val(),
-                D_Lieu_: $("#D_Lieu").val(),
-
-            },
-            success: function (resultat, statut) {
-                alert("enregistrement effectuee");
-            },
-            error: function (resultat, statut, erreur) {
-                alert("enregistrement echec");
-            },
-            complete: function () {
-
-            }
-        });
-    }
-    
+<script type="text/javascript">   
 </script>
