@@ -19,7 +19,7 @@
         </div>
         <div class="box-body">
             <div class="form-group">
-                <label for="exampleInputNom">Nom Complet</label>
+                <label>Nom Complet</label>
                 <input type="text" class="form-control" id="decl_name">
             </div>
             <div class="form-group">
@@ -35,27 +35,33 @@
                 <input type="text" class="form-control" id="decl_domicile">
             </div>
             <div class="form-group">
-                <label for="exampleInputDate">Date de Naissance</label>
+                <label>Date de Naissance</label>
                 <input type="text" class="form-control" id="decl_date">
             </div>
             <div class="form-group">
                 <label>Sexe</label>
-                <input type="text" class="form-control" id="decl_sexe" placeholder="Masculin ou feminin">
+                <select id="decl_sexe" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                    <option selected="selected">Homme</option>
+                    <option>Femme</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail">Telephone</label>
+                <label>Telephone</label>
                 <input type="Number" class="form-control" id="decl_tel" placeholder="+237xxxxxxxx">
             </div>
             <div class="form-group">
-                <label for="exampleInputArrondissement">Arrondissement</label>
+                <label>Arrondissement</label>
                 <input type="text" class="form-control" id="decl_arr" placeholder="Entrer votre Arrondissement">
             </div>
             <div class="form-group">
-                <label for="exampleInputPhoto">photo d'identite</label>
+                <label>photo d'identite</label>
                 <input type="file" id="exampleInputPhoto">
                 <p class="help-block">Entrer une photo d'identite</p>
             </div>
         </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="button" id="next"  class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon glyphicon-chevron-right"></span>save</button>
+        </div><!-- /.box-footer-->
     </div><!-- /.box -->
 </div>
 <div id="declaration" style="visibility:hidden">
@@ -86,14 +92,16 @@
                 @Html.EditorFor(model => model.D_Name, new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div><!-- /.box-body -->
-        
+        <div class="box-footer">
+            <button type="button" id="next" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon glyphicon-chevron-right"></span>save</button>
+        </div><!-- /.box-footer-->
     </div><!-- /.box -->
 </div>
 
 <div id="naissance" style="visibility:hidden">
     <div class="box box-solid box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Informations sur l'enfant</h3>
+            <h3 class="box-title">Informations sur la naissance</h3>
             <div class="box-tools pull-right">
                 <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
 
@@ -101,23 +109,23 @@
         </div>
         <div class="box-body">
             <div class="form-group">
-                <label for="exampleInputNom">Noms(s)</label>
+                <label>Noms(s)</label>
                 <input type="text" class="form-control" id="naissNom">
             </div>
             <div class="form-group">
-                <label for="exampleInputPrenom">Prenom(s)</label>
+                <label>Prenom(s)</label>
                 <input type="text" class="form-control" id="naissPrenom">
             </div>
             <div class="form-group">
-                <label for="exampleInputDate">Date de Naissance</label>
+                <label>Date de Naissance</label>
                 <input type="date" class="form-control" id="naissDate">
             </div>
             <div class="form-group">
-                <label for="exampleInputHeure">Heure</label>
+                <label>Heure</label>
                 <input type="date" class="form-control" id="naissHeure">
             </div>
             <div class="form-group">
-                <label for="exampleInputLieu">Lieu de Naissance</label>
+                <label>Lieu de Naissance</label>
                 <input type="text" class="form-control" id="naissLieu">
             </div>
             <div class="form-group">
@@ -136,7 +144,9 @@
                 </select>
             </div>
         </div><!-- /.box-body -->
-        
+        <div class="box-footer">
+            <button type="button" id="next" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon glyphicon-chevron-right"></span>save</button>
+        </div><!-- /.box-footer-->
     </div><!-- /.box -->
 </div>
 
@@ -186,7 +196,9 @@
 
 
         </div><!-- /.box-body -->
-        
+        <div class="box-footer">
+            <button type="button" id="next" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon glyphicon-chevron-right"></span>save</button>
+        </div><!-- /.box-footer-->
     </div><!-- /.box -->
 </div>
 
@@ -236,11 +248,11 @@
 
 
         </div><!-- /.box-body -->
-        
+        <div class="box-footer" style="visibility:hidden">
+            <button type="button" id="last" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon-floppy-disk"></span>save</button>
+        </div><!-- /.box-footer-->
     </div><!-- /.box -->
-    <div class="box-footer" style="visibility:hidden">
-        <button type="button" id="last" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon-floppy-disk"></span>save</button>
-    </div><!-- /.box-footer-->
+    
 </div>
 <script type="text/javascript">   
 </script>

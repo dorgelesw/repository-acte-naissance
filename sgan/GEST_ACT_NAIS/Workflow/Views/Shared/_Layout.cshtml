@@ -339,7 +339,7 @@
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-        function savePere(idDeclaration) {
+        function saveMere(idDeclaration, idPere) {
             $.ajax("http://localhost:2201/api/Mere", {
                 type: "POST",
                 async: false,
@@ -362,18 +362,30 @@
                 }
             });
         }
-        function savePere(idDeclaration) {
+        function savePere(idDeclarant) {
+            
+            var perenom = $("#perenom").val();
+            var peredate = $("#peredate").val();
+            var peredate = $("#peredate").val();
+            var perelieu = $("#perelieu").val();
+
+            alert(perenom);
+            alert(peredate);
+            alert(peredate);
+            alert(perelieu);
         $.ajax("http://localhost:2201/api/Pere", {
             type: "POST",
-            async: false,
+            async: true,
             data: {
                 id: 0,
-                P_Nom_Famille: $("#perenom").val(),
-                //D_Date_Heure: $("#D_Heure").val(),
-                
-
+                P_Nom_Famille: ""+perenom+"",
+                P_Name: "" + perenom + "",
+                P_Date_Naissance: new Date(peredate),
+                P_Lieu_Naissance: "" + perelieu + "",
+                P_sexe: "Homme"
             },
-            success: function (resultat, statut) {
+            success: function (resultat) {
+                //saveMere(idDeclarant,resultat);
                 console.log(resultat);
                 alert("enregistrement effectuee");
             },
@@ -385,20 +397,25 @@
             }
         });
     }
-        $("#last").click(function () { 
+        $("#last").click(function () {
+            var liste = document.getElementById("decl_sexe");
+            alert(liste.options.length);
+            alert(liste.options[liste.selectedIndex].value);
+            alert($("#decl_sexe").val());
             $.ajax("http://localhost:2201/api/Personnes", {
+                
                 type: "POST",
                 async: true,
                 data: {
                     id: 0,
                     P_Name: ""+$("#decl_name").val()+"",
                     P_Date_Naissance: new Date($("#decl_date").val()),
-                    P_Lieu_Naissance:""+ $("#decl_domicile").val()+"",
-                    P_Sexe: "'"+$("#decl_sexe")+"'",
-
-
+                    P_Lieu_Naissance: "" + $("#decl_domicile").val() + "",
+                    
+                    P_Sexe: liste.options[liste.selectedIndex].value
                 },
-                success: function (resultat, statut) {
+                success: function (resultat) {
+                    alert("Appel a savepere");
                     savePere(resultat);
                 },
                 error: function (resultat, statut, erreur) {
