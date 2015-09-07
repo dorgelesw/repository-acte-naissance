@@ -12,9 +12,15 @@ namespace P7GestAct.Controllers.api
     public class NaissanceController : ApiController
     {
         private IRepository repository = new SystemActeRepository();
-        public int PostDeclaration(Naissance naiss)
+        public int PostNaissance(Naissance naiss)
         {
-            return repository.addNaissance(naiss);
+            if (ModelState.IsValid)
+            {
+                return repository.addNaissance(naiss);
+            }
+            else {
+                return 1234567;
+            }
         }
     }
 }

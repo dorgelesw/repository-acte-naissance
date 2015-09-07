@@ -18,7 +18,15 @@ namespace P7GestAct.Controllers.api
       
         public int  PostDeclaration(Declaration del)
         {
-            return repository.addDeclaration(del);
+            del.CentreID = 1;
+            if (ModelState.IsValid)
+            {
+                return repository.addDeclaration(del);
+            }
+            else
+            {
+                return 1234;
+            }
             
         }
     }

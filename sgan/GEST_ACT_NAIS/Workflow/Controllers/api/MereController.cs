@@ -13,8 +13,16 @@ namespace P7GestAct.Controllers.api
     public class MereController : ApiController
     {
         private IRepository repository = new SystemActeRepository();
-        public int PostMere(Mere mere){
-            return repository.addMere(mere);
+        public int PostMere(Mere meres){
+            meres.ArrondissementID = 1;
+            if (ModelState.IsValid)
+            {
+                return repository.addMere(meres);
+            }
+            else
+            {
+                return 123;
+            }
         }
     }
 }

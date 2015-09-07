@@ -220,8 +220,9 @@ namespace P7GestAct.Models.Repositories
         }
         public int addDeclaration(Declaration declaration)
         {
-            context.Declarations.Add(declaration);
-            return context.SaveChanges();
+            declaration=context.Declarations.Add(declaration);
+             context.SaveChanges();
+             return declaration.DeclarationID;
         }
         public int updateDeclaration(Declaration declaration)
         {
@@ -270,8 +271,9 @@ namespace P7GestAct.Models.Repositories
         }
         public int addNaissance(Naissance naissance)
         {
-            context.Naissances.Add(naissance);
-            return context.SaveChanges();
+            naissance=context.Naissances.Add(naissance);
+             context.SaveChanges();
+           return naissance.NaissanceID;
         }
         public int updateNaissance(Naissance naissance)
         {

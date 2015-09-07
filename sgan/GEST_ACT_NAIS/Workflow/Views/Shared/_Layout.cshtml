@@ -339,25 +339,99 @@
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
-        function saveMere(idDeclaration, idPere) {
-            $.ajax("http://localhost:2201/api/Mere", {
+
+        function saveNaissance(idDeclarant, idPere, idMere,idDeclaration) {
+
+            alert($("#naissNom").val());
+            alert($("#naissPrenom").val());
+            alert($("#naissLieu").val());
+            alert($("#filiationID").val());
+            alert($("#D_Lieu").val());
+            $.ajax("http://localhost:2201/api/Naissance", {
                 type: "POST",
-                async: false,
+                async: true,
                 data: {
                     id: 0,
-                    M_Nom_Famille_Naissance: $("#merenom").val(),
+                    N_Name: "" + $("#naissNom").val() + "",
+                    N_Prenom: "" + $("#naissPrenom").val() + "",
+                    N_Date_Heure: new Date($("#naissDate").val()),
+                    N_Lieux: "" + $("#naissLieu").val() + "",
+                    N_Filiation: "" + $("#filiationID").val() + "",
+                    N_sexe: $("#sexeid").val()
+                },
+                success: function (resultat) {
+                    alert("fin de la declaration");
+                    console.log(resultat);
+                    alert("Acte declaree");
+                },
+                error: function (resultat, statut, erreur) {
+                    alert("*****0echec0*****");
+                },
+                complete: function () {
+                    alert("-----*******Fermer********------")
+
+                }
+            });
+        }
+        function saveDeclaration(idDeclarant, idPere, idMere) {
+            
+            alert($("#D_Lieu").val());
+            alert($("#D_nom").val());
+            alert($("#D_Lieu").val());
+            var dedate = $("#ds_date").val();
+            alert(dedate);
+            $.ajax("http://localhost:2201/api/Declaration", {
+                type: "POST",
+                async: true,
+                data: {
+                    id: 0,
+                    D_Date_Heure: new Date($("#ds_date").val()),
+                    D_Lieu: "" + $("#D_Lieu").val() + "",
+                    D_Name: ""+$("#D_nom").val()+"",
                     //D_Date_Heure: $("#D_Heure").val(),
 
 
                 },
                 success: function (resultat, statut) {
+                    saveNaissance(idDeclarant, idPere,idMere, resultat);
+                    alert("appel succes declaration");
                     console.log(resultat);
-                    alert("enregistrement effectuee");
+                    alert("declaration  enregistrée");
                 },
                 error: function (resultat, statut, erreur) {
-                    alert("enregistrement echec");
+                    alert("enregistrement declaration echec");
                 },
                 complete: function () {
+                    alert("continue save naissance")
+
+                }
+            });
+        }
+        function saveMere(idDeclarant, idPere) {
+            $.ajax("http://localhost:2201/api/Mere", {
+                type: "POST",
+                async: true,
+                data: {
+                    id: 0,
+                    M_Nom_Famille_Naissance: $("#merenom").val(),
+                    P_Name: "" + $("#merenom").val() + "",
+                    P_Date_Naissance: new Date($("#meredate").val()),
+                    P_Lieu_Naissance:""+ merelieu + "",
+                    P_sexe:"F"
+                    //D_Date_Heure: $("#D_Heure").val(),
+
+
+                },
+                success: function (resultat, statut) {
+                    saveDeclaration(idDeclarant,idPere, resultat);
+                    console.log(resultat);
+                    alert("mere enregistrée");
+                },
+                error: function (resultat, statut, erreur) {
+                    alert("enregistrement mere echec");
+                },
+                complete: function () {
+                    alert("continue save declaration")
 
                 }
             });
@@ -369,10 +443,6 @@
             var peredate = $("#peredate").val();
             var perelieu = $("#perelieu").val();
 
-            alert(perenom);
-            alert(peredate);
-            alert(peredate);
-            alert(perelieu);
         $.ajax("http://localhost:2201/api/Pere", {
             type: "POST",
             async: true,
@@ -385,12 +455,13 @@
                 P_sexe: "Homme"
             },
             success: function (resultat) {
-                //saveMere(idDeclarant,resultat);
+                alert("appel saveMere");
+                saveMere(idDeclarant,resultat);
                 console.log(resultat);
-                alert("enregistrement effectuee");
+                alert("enregistrement pere success");
             },
             error: function (resultat, statut, erreur) {
-                alert("enregistrement echec");
+                alert("enregistrement pere echec");
             },
             complete: function () {
 
@@ -398,10 +469,8 @@
         });
     }
         $("#last").click(function () {
-            var liste = document.getElementById("decl_sexe");
-            alert(liste.options.length);
-            alert(liste.options[liste.selectedIndex].value);
-            alert($("#decl_sexe").val());
+            //alert($("#merenom").val());
+    
             $.ajax("http://localhost:2201/api/Personnes", {
                 
                 type: "POST",
@@ -410,19 +479,18 @@
                     id: 0,
                     P_Name: ""+$("#decl_name").val()+"",
                     P_Date_Naissance: new Date($("#decl_date").val()),
-                    P_Lieu_Naissance: "" + $("#decl_domicile").val() + "",
-                    
-                    P_Sexe: liste.options[liste.selectedIndex].value
+                    P_Lieu_Naissance: "" + $("#decl_domicile").val() + "",                   
+                    P_Sexe: $("#decl_sexe").val(),
                 },
                 success: function (resultat) {
                     alert("Appel a savepere");
                     savePere(resultat);
                 },
                 error: function (resultat, statut, erreur) {
-                    alert("0");
+                    alert("savedeclarant echec");
                 },
                 complete: function () {
-                    alert("complete");
+                    alert("continue savepere");
 
 
                 }
