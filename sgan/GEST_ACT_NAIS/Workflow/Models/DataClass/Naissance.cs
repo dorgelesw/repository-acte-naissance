@@ -20,7 +20,7 @@ namespace P7GestAct.Models.DataClass
         public String N_Prenom { get; set; }
 
         [Required]
-        //[DataType(DataType.DateTime)]
+        //[DataType(DataType.Date)]
         [DisplayName("Date de naissance de l'enfant")]
         //[DisplayFormat(DataFormatString="{dd/MM/yy}")]
         public string N_Date_Heure { get; set; }

@@ -271,6 +271,10 @@ namespace P7GestAct.Models.Repositories
         }
         public int addNaissance(Naissance naissance)
         {
+            naissance.DeclarationID = 1;
+            naissance.PereID = 1;
+            naissance.MereID = 1;
+
             naissance=context.Naissances.Add(naissance);
              context.SaveChanges();
            return naissance.NaissanceID;
