@@ -8,27 +8,27 @@ using System.Web;
 
 namespace P7GestAct.Models.Repositories
 {
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
+    //[DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class SystemActeDbContext : DbContext
     {
         public SystemActeDbContext()
             : base("systemActeDb")
         {
-            this.Configuration.ValidateOnSaveEnabled = false; //mysql
+            //this.Configuration.ValidateOnSaveEnabled = false; //mysql
             Database.SetInitializer<SystemActeDbContext>(new SystemActeDbContextInitializer());
         }
 
-        static SystemActeDbContext()//mysql
-    {
-            DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
-    }
+    //    static SystemActeDbContext()//mysql
+    //{
+    //        DbConfiguration.SetConfiguration(new MySql.Data.Entity.MySqlEFConfiguration());
+    //}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             //mysql
-            modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
-            base.OnModelCreating(modelBuilder);
+            //modelBuilder.Conventions.Remove<System.Data.Entity.ModelConfiguration.Conventions.PluralizingTableNameConvention>();
+            //base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Arrondissement> Arrondissements { get; set; }
