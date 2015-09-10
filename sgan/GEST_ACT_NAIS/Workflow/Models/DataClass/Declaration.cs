@@ -12,10 +12,10 @@ namespace P7GestAct.Models.DataClass
         public int DeclarationID { get; set; }
 
         [Required]
-        [DataType(DataType.DateTime)]
+       // [DataType(DataType.Date)]
         [DisplayName("Date de declaration")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
-        public DateTime D_Date_Heure { get; set; }
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yy}")]
+        public string D_Date_Heure { get; set; }
 
         [Required]
         public String D_Lieu { get; set; }
