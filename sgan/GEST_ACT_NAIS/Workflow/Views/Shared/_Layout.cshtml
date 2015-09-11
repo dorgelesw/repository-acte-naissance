@@ -415,7 +415,7 @@
                                                     async: true,
                                                     data: {
                                                         id: 0,
-                                                        D_Date_Heure: new Date($("#D_date").val()),
+                                                        D_Date_Heure:$("#D_date").val(),
                                                         D_Lieu: "" + $("#D_Lieu").val() + "",
                                                         D_Name: "" + $("#D_nom").val() + "",
 
@@ -442,7 +442,7 @@
                                                                     id: 0,
                                                                     N_Name: "" + $("#naissNom").val() + "",
                                                                     N_Prenom: "" + $("#naissPrenom").val() + "",
-                                                                    N_Date_Heure: new Date($("#naissDate").val()),
+                                                                    N_Date_Heure: $("#naissDate").val(),
                                                                     N_Lieux: "" + $("#naissLieu").val() + "",
                                                                     N_Filiation: "" + $("#filiationID").val() + "",
                                                                     N_sexe: $("#sexeid").val()
