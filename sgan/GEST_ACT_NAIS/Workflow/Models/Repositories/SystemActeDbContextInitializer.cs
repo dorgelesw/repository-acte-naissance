@@ -39,13 +39,15 @@ namespace P7GestAct.Models.Repositories
             }.ForEach(departement => context.Departements.Add(departement));
             context.SaveChanges();
 
-            new List<Arrondissement>{
+            List<Arrondissement> items = new List<Arrondissement>(){
                 new Arrondissement(){Arrondissement_Name="Yaounde 1", DepartementID=2},
                 new Arrondissement(){Arrondissement_Name="Yaounde 2", DepartementID=2},
                 new Arrondissement(){Arrondissement_Name="Yaounde 3", DepartementID=2},
                 new Arrondissement(){Arrondissement_Name="Yaounde 7", DepartementID=2},             
-            }.ForEach(arrondissement => context.Arrondissements.Add(arrondissement));
+            };
+            items.ForEach(arrondissement => context.Arrondissements.Add(arrondissement));
             context.SaveChanges();
+           
 
             new List<Commune>{
                 new Commune(){ Commune_Name="Yaoundé 1", ArrondissementID=1},
@@ -80,5 +82,6 @@ namespace P7GestAct.Models.Repositories
             }.ForEach(contact => context.Contacts.Add(contact));
             context.SaveChanges();
         }
+        
     }
 }

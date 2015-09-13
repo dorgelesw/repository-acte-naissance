@@ -7,6 +7,8 @@ using System.Web.Http;
 using P7GestAct.Models.Repositories;
 using P7GestAct.Models.DataClass;
 using System.Threading.Tasks;
+using System.Web.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace P7GestAct.Controllers.api
 {
@@ -27,7 +29,6 @@ namespace P7GestAct.Controllers.api
         }
         public int PostPersonne(Personne personne)
         {
-           
             
             if (ModelState.IsValid)
             {
@@ -38,5 +39,19 @@ namespace P7GestAct.Controllers.api
                 return 0;
             }
         }
+        //public enum Arrondissement
+        //{
+             
+        //        [Display(Name = "Yaounde1.")]
+        //         Yaounde1,
+        //         [Display(Name = "Yaounde 2.")]
+        //         Yaounde2,
+        //         [Display(Name = "Yaounde 3.")]
+        //         Yaounde3,
+        //         [Display(Name = "Yaounde 4.")]
+        //         Yaounde4,
+                
+        //    };
+        }
     }
-}
+
