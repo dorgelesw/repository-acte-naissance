@@ -247,14 +247,7 @@
             <!--End content--> 
         </div><!-- /.content-wrapper -->
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- To the right -->
-            <div class="pull-right hidden-xs">
-               
-            </div>
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2015 <a href="www.p7csarl.com">P7C Sarl</a>.</strong> All rights reserved.
-        </footer>
+        
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Create the tabs -->
@@ -358,8 +351,10 @@
                 success: function (resultat) {
                     alert("enregistrement reussie");
                     console.log(resultat);
-                    document.getElementById("declarant").style.visibility = "hidden";
-                    document.getElementById("pere").style.visibility = "visible";
+                    //document.getElementById("declarant").style.visibility = "hidden";
+                    $("#declarant").css('display', 'none');
+                    $("#pere").css('display', 'block');
+                    //document.getElementById("pere").style.visibility = "visible";
 
                     $("#next2").click(function(resultat){
                         var perenom = $("#perenom").val();
@@ -382,10 +377,11 @@
                             success: function (idpere) {
                                 alert("appel saveMere");
                                 console.log(idpere);
-                                document.getElementById("declarant").style.visibility = "hidden";
-                                document.getElementById("pere").style.visibility="hidden";
-                                document.getElementById("mere").style.visibility="visible";
-                                document.getElementById("declaration").style.visibility = "hidden";
+                                
+                                $("#pere").css('display', 'none');
+                                $("#mere").css('display', 'block');
+                                //document.getElementById("mere").style.visibility="visible";
+                               // document.getElementById("declaration").style.visibility = "hidden";
                                 $("#next3").click(function(resultat,idpere){
                                     $.ajax("http://localhost:2201/api/Mere", {
                                         type: "POST",
@@ -404,10 +400,8 @@
                                         success: function (idmere) {
                                             console.log(idmere);
                                             alert("mere enregistrée");
-                                            document.getElementById("declarant").style.visibility="hidden"
-                                            document.getElementById("pere").style.visibility="hidden";
-                                            document.getElementById("mere").style.visibility="hidden";
-                                            document.getElementById("declaration").style.visibility = "visible";
+                                            $("#mere").css('display', 'none');
+                                            $("#declaration").css('display', 'block');
                                             $("#next4").click(function(resultat,idpere,idmere){
                                                 var dedate = $("#D_date").val();
                                                 $.ajax("http://localhost:2201/api/Declaration", {
@@ -428,13 +422,10 @@
                                                         alert("appel succes declaration");
                                                         console.log(idDeclaration);
                                                         alert("declaration  enregistrée");
-                                                        document.getElementById("declarant").style.visibility="hidden"
-                                                        document.getElementById("pere").style.visibility="hidden";
-                                                        document.getElementById("mere").style.visibility="hidden";
-                                                        document.getElementById("declaration").style.visibility = "hidden";
-                                                        document.getElementById("naissance").style.visibility = "visible";
+                                                        $("#declaration").css('display', 'none');
+                                                        $("#naissance").css('display', 'block');
 
-                                                        $("#last").click(function(resultat,idpere,idmere,idDeclaration){
+                                                        $("#last").click(function (resultat, idpere, idmere, idDeclaration) {
                                                             $.ajax("http://localhost:2201/api/Naissance", {
                                                                 type: "POST",
                                                                 async: true,
@@ -449,7 +440,8 @@
                                                                 },
                                                                 success: function () {
                                                                     alert("fin de la declaration naissance");
-                                                                    document.getElementById("naissance").style.visibility = "hidden";
+                                                                    $("#naissance").css('display', 'none');
+
                                                                     alert("Acte naissance declaree");
                                                                 },
                                                                 error: function (resultat, statut, erreur) {
