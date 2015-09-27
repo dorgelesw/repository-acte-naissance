@@ -15,6 +15,7 @@
         $("#naissance").css('display', 'none');
         $("#mere").css('display', 'none');
         $("#pere").css('display', 'none');
+
     });
    
    

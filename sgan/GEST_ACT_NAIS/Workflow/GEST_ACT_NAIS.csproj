@@ -2006,6 +2006,7 @@
     <Compile Include="User.cs">
       <DependentUpon>sganModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\SomeModelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -2052,7 +2053,6 @@
     <Folder Include="Services\Declaration\" />
     <Folder Include="Services\Saisies\" />
     <Folder Include="Services\Traitement\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

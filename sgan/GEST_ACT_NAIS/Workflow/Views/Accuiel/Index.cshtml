@@ -55,12 +55,12 @@
             </div>
             <div class="form-group">
                 <label>Arrondissement</label>
-                <select id="decl_arr" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+                @*<select id="decl_arr" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
                     <option selected="selected">Nde</option>
                     <option>Mifi</option>
                     <option>Ntem</option>
-                </select>
-                
+                </select>*@
+                @Html.DropDownList("tems", null, htmlAttributes: new { @class="form-control select2 selected-hidden-accessible"})
             </div>
             <div class="form-group">
                 <label>photo d'identite</label>
@@ -204,11 +204,9 @@
             </div>
             <div class="form-group">
                 <label for="ArrondissementID">Arrondissement</label>
-                <select id="merearr" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                    <option selected="selected">Nde</option>
-                    <option>Mifi</option>
-                    <option>Ntem</option>
-                </select>
+                @Html.DropDownList("tems", null, htmlAttributes: new { @class = "form-control select2 selected-hidden-accessible" })
+
+
             </div>
 
 
@@ -264,11 +262,7 @@
             </div>
             <div class="form-group">
                 <label for="">Arrondissement</label>
-                <select id="perearr" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                    <option selected="selected">Nde</option>
-                    <option>Mifi</option>
-                    <option>Ntem</option>
-                </select>
+                @Html.DropDownList("tems", null, htmlAttributes: new { @class = "form-control select2 selected-hidden-accessible" })
             </div>
 
             <div class="box-footer">
@@ -279,5 +273,7 @@
     </div><!-- /.box -->
     
 </div>
-<script type="text/javascript">   
-</script>
+<div id ="impression"style="display:none">
+    <p>imprimer un recepisse</p>
+
+</div>

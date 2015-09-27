@@ -347,6 +347,7 @@
                     P_Date_Naissance: new Date($("#decl_date").val()),
                     P_Lieu_Naissance: "" + $("#decl_domicile").val() + "",                   
                     P_Sexe: $("#decl_sexe").val(),
+                    Arrondissement_Name: $("#tems").val(),
                 },
                 success: function (resultat) {
                     alert("enregistrement reussie");
@@ -372,7 +373,7 @@
                                 P_Date_Naissance: new Date(peredate),
                                 P_Lieu_Naissance: "" + perelieu + "",
                                 P_sexe: "Homme",
-                                Arrondissement_Name: "" + $("#perearr") + ""
+                                Arrondissement_Name: $("#tems").val(),
                             },
                             success: function (idpere) {
                                 alert("appel saveMere");
@@ -392,8 +393,8 @@
                                             P_Name: "" + $("#merenom").val() + "",
                                             P_Date_Naissance: new Date($("#meredate").val()),
                                             P_Lieu_Naissance: $("#merelieu").val(),
-                                            P_sexe:"F"
-										
+                                            P_sexe:"F",
+                                            Arrondissement_Name: $("#tems").val(),
 
 
                                         },
@@ -448,8 +449,9 @@
                                                                     alert("*****0echec0*****");
                                                                 },
                                                                 complete: function () {
-                                                                    alert("-----*******Fermer********------")
-
+                                                                    alert("-----*******Fermer********------");
+                                                                    alert("imprimer un recepisse");
+                                                                    $("#impression").css('display', 'block');
                                                                 }
                                                             }
                                                             

@@ -19,6 +19,15 @@ namespace P7GestAct.Controllers.api
         // GET: Accuiel
         public ActionResult Index()
         {
+            List<string> items = new List<string>();
+            items.Add("Yaounde I");
+            items.Add("Yaounde II");
+            items.Add("Yaounde III");
+            items.Add("Yaounde IV");
+            items.Add("Yaounde V");
+            items.Add("Yaounde VI");
+            items.Add("Yaounde VII");
+            ViewData["tems"] = new SelectList(items);
             return View();
         }
         

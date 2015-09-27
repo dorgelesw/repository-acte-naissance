@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System
-.Net.Http;
+using System.Net.Http;
 using System.Web.Http;
 using P7GestAct.Models.Repositories;
 using P7GestAct.Models.DataClass;
@@ -21,6 +20,7 @@ namespace P7GestAct.Controllers.api
 
         public IEnumerable<Personne> GetPersonnes()
         {
+            
             return repository.Personnes;
         }
         public IHttpActionResult GetPersonne(int id)
@@ -40,19 +40,6 @@ namespace P7GestAct.Controllers.api
                 return 0;
             }
         }
-        //public enum Arrondissement
-        //{
-             
-        //        [Display(Name = "Yaounde1.")]
-        //         Yaounde1,
-        //         [Display(Name = "Yaounde 2.")]
-        //         Yaounde2,
-        //         [Display(Name = "Yaounde 3.")]
-        //         Yaounde3,
-        //         [Display(Name = "Yaounde 4.")]
-        //         Yaounde4,
-                
-        //    };
         }
     }
 
