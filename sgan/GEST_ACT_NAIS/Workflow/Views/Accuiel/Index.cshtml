@@ -1,7 +1,7 @@
-﻿@model P7GestAct.Models.DataClass.Personne
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Accueil";
+    var arrondissements = (List<P7GestAct.Models.DataClass.Arrondissement>)ViewBag.arrondissements;
 }
 
 
@@ -55,12 +55,8 @@
             </div>
             <div class="form-group">
                 <label>Arrondissement</label>
-                @*<select id="decl_arr" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                    <option selected="selected">Nde</option>
-                    <option>Mifi</option>
-                    <option>Ntem</option>
-                </select>*@
-                @Html.DropDownList("tems", null, htmlAttributes: new { @class="form-control select2 selected-hidden-accessible"})
+                @Html.DropDownList("arrondissement", new SelectList(@arrondissements, "ArrondissementID", "Arrondissement_Name"), new { @class = "form-control select2 selected-hidden-accessible" })
+               @* @Html.DropDownList("tems", null, htmlAttributes: new { @class="form-control select2 selected-hidden-accessible"})*@
             </div>
             <div class="form-group">
                 <label>photo d'identite</label>
@@ -204,7 +200,11 @@
             </div>
             <div class="form-group">
                 <label for="ArrondissementID">Arrondissement</label>
-                @Html.DropDownList("tems", null, htmlAttributes: new { @class = "form-control select2 selected-hidden-accessible" })
+                @Html.DropDownList("arrondissement", new SelectList(@arrondissements, "ArrondissementID", "Arrondissement_Name"), new { @class = "form-control select2 selected-hidden-accessible" })
+
+
+
+
 
 
             </div>
@@ -262,18 +262,23 @@
             </div>
             <div class="form-group">
                 <label for="">Arrondissement</label>
-                @Html.DropDownList("tems", null, htmlAttributes: new { @class = "form-control select2 selected-hidden-accessible" })
+                @*@Html.DropDownList("tems", null, htmlAttributes: new { @class = "form-control select2 selected-hidden-accessible" })*@
+                @Html.DropDownList("arrondissement", new SelectList(@arrondissements, "ArrondissementID", "Arrondissement_Name"), new { @class = "form-control select2 selected-hidden-accessible" })
+
+
             </div>
 
             <div class="box-footer">
                 <button type="button" id="next2" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon-floppy-disk"></span>suivant</button>
             </div><!-- /.box-footer-->
         </div><!-- /.box-body -->
-        
-    </div><!-- /.box -->
-    
-</div>
-<div id ="impression"style="display:none">
-    <p>imprimer un recepisse</p>
+
+    </div><!-
 
 </div>
+- /.box -->
+
+</div>
+<div id="impression" style="display:none">
+    <h2>imprimer un recepisse</h2>
+    <button type="button" id="next1" class="btn btn-primary btn-flat btn-sm btn-block"><span class="glyphicon glyphicon glyphicon glyphicon-print"></span>Imprimer</button>

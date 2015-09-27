@@ -10,7 +10,7 @@ namespace P7GestAct.Models.Repositories
     interface IRepository
     {
         //Arrondissement
-        //IEnumerable<Arrondissement> Arrondissements { get; }
+        IEnumerable<Arrondissement> GetListArrondissement();
         //int addArrondissement(Arrondissement arr);
         //int updateArrondissement(Arrondissement arr);
         //Arrondissement deleteArrondissement(Int64 id);

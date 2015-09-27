@@ -1,4 +1,5 @@
-﻿using P7GestAct.Models.Repositories;
+﻿using P7GestAct.Models.DataClass;
+using P7GestAct.Models.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +15,19 @@ namespace P7GestAct.Controllers.api
         public AccuielController()
         {
             repository = new SystemActeRepository();
+            
         }
 
         // GET: Accuiel
         public ActionResult Index()
         {
-            List<string> items = new List<string>();
-            items.Add("Yaounde I");
-            items.Add("Yaounde II");
-            items.Add("Yaounde III");
-            items.Add("Yaounde IV");
-            items.Add("Yaounde V");
-            items.Add("Yaounde VI");
-            items.Add("Yaounde VII");
-            ViewData["tems"] = new SelectList(items);
+            List<Arrondissement> arrondissements = repository.GetListArrondissement().ToList<Arrondissement>();
+
+            ViewBag.arrondissements = arrondissements;
+            if (arrondissements == null || arrondissements.Count==0 )
+            {
+                return null;
+            }
             return View();
         }
         

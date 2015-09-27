@@ -10,6 +10,12 @@ namespace P7GestAct.Models.Repositories
     {
         private SystemActeDbContext context = new SystemActeDbContext();
 
+        //Arr
+        public IEnumerable<Arrondissement> GetListArrondissement()
+        {
+            return context.Arrondissements;
+        }
+        
         //Personne
         public IEnumerable<Personne> Personnes {
             get { return context.Personnes; }
