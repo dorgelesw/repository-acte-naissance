@@ -18,7 +18,7 @@ namespace P7GestAct.Controllers.api
       
         public int  PostDeclaration(Declaration del)
         {
-            del.CentreID = 1;
+            //del.CentreID = 1;
             del.PersonneID = 1;
             if (ModelState.IsValid)
             {

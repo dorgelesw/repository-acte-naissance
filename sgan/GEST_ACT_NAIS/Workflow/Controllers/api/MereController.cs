@@ -14,7 +14,7 @@ namespace P7GestAct.Controllers.api
     {
         private IRepository repository = new SystemActeRepository();
         public int PostMere(Mere meres){
-            meres.ArrondissementID = 1;
+            
             if (ModelState.IsValid)
             {
                 return repository.addMere(meres);

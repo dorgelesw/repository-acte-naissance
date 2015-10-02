@@ -17,7 +17,7 @@ namespace P7GestAct.Models.Repositories
         //Arrondissement findArrondissement(Int64 id);
 
         //Centre
-        //IEnumerable<Centre> Centres { get; }
+        IEnumerable<Centre> GetListCentre();
         //int addCentre(Centre centre);
         //int updateCentre(Centre centre);
         //Centre deleteCentre(Int64 id);

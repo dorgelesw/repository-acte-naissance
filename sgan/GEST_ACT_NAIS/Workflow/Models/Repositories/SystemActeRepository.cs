@@ -15,7 +15,11 @@ namespace P7GestAct.Models.Repositories
         {
             return context.Arrondissements;
         }
-        
+        //Centre
+        public IEnumerable<Centre> GetListCentre()
+        {
+            return context.Centres;
+        }
         //Personne
         public IEnumerable<Personne> Personnes {
             get { return context.Personnes; }
@@ -23,11 +27,11 @@ namespace P7GestAct.Models.Repositories
 
         public int addPersonne(Personne p)
         {
-            p.ArrondissementID = 1;
-
+            //p.ArrondissementID = 1;
             p = context.Personnes.Add(p);
-            context.SaveChanges();
-
+            
+                context.SaveChanges();
+            
             return p.PersonneID;
         }
 
@@ -277,10 +281,6 @@ namespace P7GestAct.Models.Repositories
         }
         public int addNaissance(Naissance naissance)
         {
-            naissance.DeclarationID = 1;
-            naissance.PereID = 1;
-            naissance.MereID = 1;
-
             naissance=context.Naissances.Add(naissance);
              context.SaveChanges();
            return naissance.NaissanceID;
@@ -331,6 +331,7 @@ namespace P7GestAct.Models.Repositories
         
         public int addPere(Pere pere)
         {
+            pere.ArrondissementID = 1;
             pere=context.Peres.Add(pere);
             context.SaveChanges();
             return pere.PersonneID;
@@ -368,6 +369,7 @@ namespace P7GestAct.Models.Repositories
         }
         public int addMere(Mere mere)
         {
+            mere.ArrondissementID = 1;
             mere=context.Meres.Add(mere);
              context.SaveChanges();
              return mere.PersonneID;

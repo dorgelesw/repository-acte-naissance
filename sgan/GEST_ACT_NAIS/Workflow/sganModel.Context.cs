@@ -26,5 +26,7 @@ namespace P7GestAct
         }
     
         public virtual DbSet<User> User { get; set; }
+
+        public System.Data.Entity.DbSet<P7GestAct.Models.DataClass.ActeNaissance> Acte_Naissance { get; set; }
     }
 }

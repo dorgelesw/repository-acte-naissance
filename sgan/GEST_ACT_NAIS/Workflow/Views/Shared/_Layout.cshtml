@@ -347,7 +347,7 @@
                     P_Date_Naissance: new Date($("#decl_date").val()),
                     P_Lieu_Naissance: "" + $("#decl_domicile").val() + "",                   
                     P_Sexe: $("#decl_sexe").val(),
-                    Arrondissement_Name: $("#tems").val(),
+                    ArrondissementID: $("#arrondissement").val(),
                 },
                 success: function (resultat) {
                     alert("enregistrement reussie");
@@ -363,6 +363,7 @@
                         var peredate = $("#peredate").val();
                         var perelieu = $("#perelieu").val();
 
+
                         $.ajax("http://localhost:2201/api/Pere", {
                             type: "POST",
                             async: true,
@@ -373,7 +374,8 @@
                                 P_Date_Naissance: new Date(peredate),
                                 P_Lieu_Naissance: "" + perelieu + "",
                                 P_sexe: "Homme",
-                                Arrondissement_Name: $("#tems").val(),
+                                ArrondissementID: $("#arrondissement").val(),
+
                             },
                             success: function (idpere) {
                                 alert("appel saveMere");
@@ -394,9 +396,7 @@
                                             P_Date_Naissance: new Date($("#meredate").val()),
                                             P_Lieu_Naissance: $("#merelieu").val(),
                                             P_sexe:"F",
-                                            Arrondissement_Name: $("#tems").val(),
-
-
+                                            ArrondissementID: $("#arrondissement").val()
                                         },
                                         success: function (idmere) {
                                             console.log(idmere);
@@ -413,10 +413,8 @@
                                                         D_Date_Heure: new Date($("#ds_date").val()),
                                                         D_Lieu: "" + $("#D_Lieu").val() + "",
                                                         D_Name: "" + $("#D_nom").val() + "",
-
-                                                        //D_Date_Heure: $("#D_Heure").val(),
-
-
+                                                        CentreID: $("#centres").val(),
+                                                        //PersonneID:resultat
                                                     },
                                                     success: function (idDeclaration) {
                                                         //saveNaissance(idDeclarant, idPere,idMere, resultat);
@@ -437,7 +435,10 @@
                                                                     N_Date_Heure: new Date($("#naissDate").val()),
                                                                     N_Lieux: "" + $("#naissLieu").val() + "",
                                                                     N_Filiation: "" + $("#filiationID").val() + "",
-                                                                    N_sexe: $("#sexeid").val()
+                                                                    N_sexe: $("#sexeid").val(),
+                                                                    DeclarationID:idDeclaration,
+                                                                    PereID: idpere,
+                                                                    MereID:idmere,
                                                                 },
                                                                 success: function () {
                                                                     alert("fin de la declaration naissance");

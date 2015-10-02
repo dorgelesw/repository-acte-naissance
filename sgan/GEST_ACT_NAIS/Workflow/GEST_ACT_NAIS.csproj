@@ -1965,9 +1965,11 @@
     <Compile Include="Controllers\api\PereController.cs" />
     <Compile Include="Controllers\api\PersonnesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PrintController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataClass\ActeNaissance.cs" />
     <Compile Include="Models\DataClass\Arrondissement.cs" />
     <Compile Include="Models\DataClass\Centre.cs" />
     <Compile Include="Models\DataClass\Commune.cs" />
@@ -2040,6 +2042,7 @@
       <LastGenOutput>sganModel.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Print\pdfvue.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2053,6 +2056,7 @@
     <Folder Include="Services\Declaration\" />
     <Folder Include="Services\Saisies\" />
     <Folder Include="Services\Traitement\" />
+    <Folder Include="Views\PdfView\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

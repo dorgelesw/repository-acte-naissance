@@ -21,8 +21,14 @@ namespace P7GestAct.Controllers.api
         // GET: Accuiel
         public ActionResult Index()
         {
+            List<Centre> centres = repository.GetListCentre().ToList<Centre>();
             List<Arrondissement> arrondissements = repository.GetListArrondissement().ToList<Arrondissement>();
+            ViewBag.centres = centres;
+            if (centres == null || centres.Count == 0)
+            {
+                return null;
 
+            }
             ViewBag.arrondissements = arrondissements;
             if (arrondissements == null || arrondissements.Count==0 )
             {
